@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    NumA <input type="number" name="" id="numa"><br>
+    NumA <input type="number" name="" id="numb"><br>
+    <input type="button" onclick="suma();" value="calcula suma"><br>
+    resultado<input type="number" name="" id="res"> 
+</body>
+   <script>
+    function suma (){
+        var numa =document.getElementById("numa").value;
+        var numb =document.getElementById("numb").value;
+        var resultado= parseInt(numa)+ parseInt(numb);
+        document.getElementById("res").value=resultado;
+    }
+    function mult (){
+        var numa =document.getElementById("numa").value;
+        var numb =document.getElementById("numb").value;
+        var resultado= parseInt(numa)* parseInt(numb);
+        document.getElementById("res").value=resultado;
+    }
+    function div (){
+        var numa =document.getElementById("numa").value;
+        var numb =document.getElementById("numb").value;
+        var resultado= parseInt(numa)/ parseInt(numb);
+        document.getElementById("res").value=resultado;
+    }
+   </script>
+</html>

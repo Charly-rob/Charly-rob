@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+
+
+    #cuadrado{
+        background-color: aqua;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+
+    }
+</style>
+
+
+
+<body>
+    <div id="cuadrado"></div>
+    <br><br><br><br><br><br><br><br>
+    <input type="button" onclick="mueve (this)" value="izq">
+    <input type="button" onclick="mueve (this)" value="der">
+    <input type="button" onclick="mueve (this)" value="arr">
+    <input type="button" onclick="mueve (this)" value="aba">
+
+
+</body>
+<script>
+    onload = function () {
+    var cuadro = document.getElementById("cuadrado");
+    cuadro.style.left = "300px";
+    cuadro.style.top = "100px";
+    }
+
+    function mueve(obj) {
+        var cuadro = document.getElementById("cuadrado");
+        var x = parseInt(cuadro.style.left);
+        var y = parseInt(cuadro.style.top);
+
+        if(obj.value=="izq"){
+            x -=10;
+        }
+        if(obj.value=="der"){
+            x +=10;
+        }
+        if(obj.value=="arr"){
+            y -=10;
+        }
+        if(obj.value=="aba"){
+            y +=10;
+        }
+        cuadro.style.left = x + "px";
+        cuadro.style.top = y + "px";
+        }
+    </script>
+
+
+</html>
