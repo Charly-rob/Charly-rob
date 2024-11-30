@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Factorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Factorial</h1>
+    <p>Introduce un número para calcular su factorial:</p>
+    <input type="number" id="numero" placeholder="Escribe un número..." />
+    <button onclick="calcularFactorial()">Calcular</button>
+    <div id="r1"></div>
+
+
+    <hr>
+
+    <h1>Calculadora de Fibonacci</h1>
+    <p>Introduce un número para calcular Fibonacci:</p>
+    <input type="number" id="numero2" placeholder="Escribe un número..." />
+    <button onclick="calcularFibonacci()">Calcular</button>
+    <div id="r2"></div>
+
+    <script>
+        function calcularFactorial() {
+            const numero = parseInt(document.getElementById("numero").value);
+            const resultadoDiv = document.getElementById("r1");
+
+            if (isNaN(numero)) {
+                resultadoDiv.textContent = "Por favor, ingresa un número válido.";
+                return;
+            }
+
+            if (numero < 0) {
+                resultadoDiv.textContent = "El factorial no está definido para números negativos.";
+                return;
+            }
+
+            let factorial = 1;
+            for (let i = 2; i <= numero; i++) {
+                factorial *= i;
+            }
+
+            resultadoDiv.textContent = factorial;
+        }
+   
+  
+      
+        function calcularFibonacci() {
+            const numero = parseInt(document.getElementById("numero2").value);
+            const resultadoDiv = document.getElementById("r2");
+
+            if (isNaN(numero)) {
+                resultadoDiv.textContent = "Por favor, ingresa un número válido.";
+                return;
+            }
+
+            if (numero < 0) {
+                resultadoDiv.textContent = "La secuencia de Fibonacci no está definida para números negativos.";
+                return;
+            }
+
+            // Calcular la secuencia de Fibonacci
+            const fibonacci = [];
+            for (let i = 0; i < numero; i++) {
+                if (i === 0) {
+                    fibonacci.push(0);
+                } else if (i === 1) {
+                    fibonacci.push(1);
+                } else {
+                    fibonacci.push(fibonacci[i - 1] + fibonacci[i - 2]);
+                }
+            }
+
+            resultadoDiv.textContent = fibonacci;
+        }
+    </script>
+</body>
+</html>
